@@ -1,0 +1,243 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a
+      class="site-header__brand"
+      href={base}
+      aria-label="Página inicial de Lucas Dias Noronha"
+    >
+      LDN
+    </a>
+
+    <nav
+    class="site-header__nav site-header__nav--desktop"
+    aria-label="Navegação principal"
+    >
+      <a href={`${base}#projetos`}>Projetos</a>
+      <a href={`${base}#sobre`}>Sobre</a>
+      <a href={`${base}#competencias`}>Competências</a>
+      <a href={`${base}#formacao`}>Formação</a>
+      <a href={`${base}#contato`}>Contato</a>
+    </nav>
+
+    <details class="mobile-menu">
+      <summary>
+        <span class="mobile-menu__label">
+          Menu
+        </span>
+
+        <span
+          class="mobile-menu__icon"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+        </span>
+      </summary>
+
+      <nav
+        class="mobile-menu__nav"
+        aria-label="Navegação móvel"
+      >
+        <a href={`${base}#projetos`}>Projetos</a>
+        <a href={`${base}#sobre`}>Sobre</a>
+        <a href={`${base}#competencias`}>Competências</a>
+        <a href={`${base}#formacao`}>Formação</a>
+        <a href={`${base}#contato`}>Contato</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 100;
+
+    border-bottom: 1px solid
+      color-mix(
+        in srgb,
+        var(--color-border) 70%,
+        transparent
+      );
+
+    background:
+      color-mix(
+        in srgb,
+        var(--color-bg) 88%,
+        transparent
+      );
+
+    backdrop-filter: blur(16px);
+  }
+
+  .site-header__inner {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 72px;
+  }
+
+  .site-header__brand {
+    color: var(--color-text-primary);
+
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-5);
+  }
+
+  .site-header__nav a {
+    color: var(--color-text-secondary);
+
+    font-size: 0.92rem;
+    font-weight: 500;
+
+    transition: color var(--transition-fast);
+  }
+
+  .site-header__nav a:hover,
+  .site-header__nav a:focus-visible {
+    color: var(--color-text-primary);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu summary {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-height: 44px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    color: var(--color-text-primary);
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu__label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu__icon {
+    position: relative;
+
+    display: block;
+
+    width: 20px;
+    height: 14px;
+  }
+
+  .mobile-menu__icon span {
+    position: absolute;
+    left: 0;
+
+    width: 20px;
+    height: 1px;
+
+    background: var(--color-text-primary);
+
+    transition:
+      transform var(--transition-fast),
+      top var(--transition-fast);
+  }
+
+  .mobile-menu__icon span:first-child {
+    top: 3px;
+  }
+
+  .mobile-menu__icon span:last-child {
+    top: 10px;
+  }
+
+  .mobile-menu[open]
+    .mobile-menu__icon
+    span:first-child {
+    top: 7px;
+
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu[open]
+    .mobile-menu__icon
+    span:last-child {
+    top: 7px;
+
+    transform: rotate(-45deg);
+  }
+
+  .mobile-menu__nav {
+    position: absolute;
+
+    top: 72px;
+    left: 0;
+    right: 0;
+
+    display: grid;
+
+    padding:
+      var(--space-4)
+      1rem
+      var(--space-5);
+
+    border-bottom: 1px solid var(--color-border);
+
+    background: var(--color-bg);
+  }
+
+  .mobile-menu__nav a {
+    padding-block: var(--space-4);
+
+    border-bottom: 1px solid var(--color-border);
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+  }
+
+  .mobile-menu__nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-menu__nav a:hover,
+  .mobile-menu__nav a:focus-visible {
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 760px) {
+    .site-header__nav--desktop {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+  }
+</style>

@@ -1,17 +1,649 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+const base = import.meta.env.BASE_URL;
 
+const skills = [
+  {
+    category: "Análise e programação",
+    items: [
+      "Python",
+      "pandas",
+      "Estatística",
+      "Análise Exploratória de Dados",
+    ],
+  },
+  {
+    category: "Bancos de dados",
+    items: [
+      "SQL",
+      "PostgreSQL",
+      "Modelagem de dados",
+    ],
+  },
+  {
+    category: "Visualização e BI",
+    items: [
+      "Power BI",
+      "Data Storytelling",
+      "Matplotlib",
+      "Plotly",
+    ],
+  },
+  {
+    category: "Ferramentas",
+    items: [
+      "Excel",
+      "Git",
+      "GitHub",
+      "Jupyter",
+    ],
+  },
+];
+
+const education = [
+  {
+    course: "Ciência de Dados e Inteligência Artificial",
+    institution: "IESB",
+  },
+  {
+    course: "Análise de Dados",
+    institution: "Claretiano",
+  },
+  {
+    course: "Inteligência Artificial",
+    institution: "Cruzeiro do Sul Virtual",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Header />
+
+  <main id="conteudo-principal">
+    <section class="hero">
+      <div class="container hero__content">
+        <p class="hero__eyebrow">
+          ANALISTA DE DADOS
+        </p>
+
+        <h1>
+          Lucas Dias Noronha
+        </h1>
+
+        <p class="hero__description">
+          Transformo dados em análises estruturadas,
+          visualizações claras e conclusões capazes de
+          apoiar a compreensão de problemas reais.
+        </p>
+
+        <div class="hero__actions">
+          <a
+            class="button button--primary"
+            href="#projetos"
+          >
+            Examinar meus projetos
+          </a>
+
+          <a
+            class="button button--secondary"
+            href="https://github.com/LUCASDNORONHA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="projetos"
+      class="section projects"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">
+            PROJETOS
+          </p>
+
+          <h2>
+            Análises construídas para investigar problemas reais.
+          </h2>
+
+          <p>
+            Estudos em que aplico preparação de dados,
+            análise exploratória, visualização e comunicação
+            de resultados.
+          </p>
+        </div>
+
+        <ProjectCard
+          title="Panorama da População Indígena Brasileira — 2010–2022"
+          description="Investigação baseada nos Censos Demográficos do IBGE sobre as transformações demográficas e espaciais da população indígena brasileira ao longo de doze anos."
+          image={`${base}images/projects/panorama-indigena.png`}
+          imageAlt="Capa do projeto Panorama da População Indígena Brasileira"
+          technologies={[
+            "Python",
+            "pandas",
+            "GeoPandas",
+            "Power BI",
+            "Streamlit",
+          ]}
+          href={`${base}projetos/panorama-populacao-indigena`}
+        />
+      </div>
+    </section>
+
+    <section
+      id="sobre"
+      class="section"
+    >
+      <div class="container about-grid">
+        <div>
+          <p class="section-eyebrow">
+            SOBRE
+          </p>
+
+          <h2>
+            Dados como instrumento para compreender processos e tomar melhores decisões.
+          </h2>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            Minha formação está direcionada à Ciência de Dados,
+            Inteligência Artificial e Análise de Dados, com interesse
+            especial pela investigação de problemas por meio de dados,
+            estatística e visualização.
+          </p>
+
+          <p>
+            Minha experiência profissional em operações logísticas
+            também contribui para a forma como observo problemas:
+            processos, gargalos, produtividade, prazos, indicadores
+            e relações entre diferentes etapas de uma operação.
+          </p>
+
+          <p>
+            Procuro combinar essa visão operacional com ferramentas
+            analíticas para transformar dados brutos em informações
+            compreensíveis, verificáveis e úteis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="competencias"
+      class="section skills-section"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">
+            COMPETÊNCIAS
+          </p>
+
+          <h2>
+            Ferramentas vinculadas a aplicações concretas.
+          </h2>
+
+          <p>
+            As competências abaixo representam tecnologias e métodos
+            que utilizo em estudos, projetos e atividades acadêmicas.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          {
+            skills.map((group) => (
+              <article class="skill-card">
+                <h3>
+                  {group.category}
+                </h3>
+
+                <ul>
+                  {
+                    group.items.map((item) => (
+                      <li>{item}</li>
+                    ))
+                  }
+                </ul>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="formacao"
+      class="section"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">
+            FORMAÇÃO
+          </p>
+
+          <h2>
+            Formação direcionada a Dados e Inteligência Artificial.
+          </h2>
+        </div>
+
+        <div class="education-list">
+          {
+            education.map((item) => (
+              <article class="education-item">
+                <div>
+                  <h3>
+                    {item.course}
+                  </h3>
+
+                  <p>
+                    {item.institution}
+                  </p>
+                </div>
+
+                <span aria-hidden="true">
+                  →
+                </span>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contato"
+      class="section contact-section"
+    >
+      <div class="container contact-grid">
+        <div>
+          <p class="section-eyebrow">
+            CONTATO
+          </p>
+
+          <h2>
+            Aberto a oportunidades em Análise de Dados.
+          </h2>
+        </div>
+
+        <div class="contact-content">
+          <p>
+            Estou construindo minha trajetória profissional na área
+            de Dados e tenho interesse em oportunidades de estágio
+            e posições de entrada em análise de dados.
+          </p>
+
+          <div class="contact-links">
+            <a
+              href="https://github.com/LUCASDNORONHA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/lucasdiasnoronha/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href="mailto:lucasdiasnoronha1998@gmail.com"
+            >
+              E-mail
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding-block:
+      calc(var(--space-9) + 72px)
+      var(--space-9);
+  }
+
+  .hero__content {
+    max-width: 900px;
+  }
+
+  .hero__eyebrow,
+  .section-eyebrow {
+    margin-bottom: var(--space-4);
+
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+  }
+
+  h1 {
+    max-width: 800px;
+
+    margin-bottom: var(--space-5);
+
+    font-size: clamp(
+      3rem,
+      8vw,
+      6.5rem
+    );
+
+    font-weight: 650;
+    letter-spacing: -0.045em;
+  }
+
+  .hero__description {
+    max-width: 680px;
+
+    margin-bottom: var(--space-6);
+
+    font-size: clamp(
+      1.125rem,
+      2vw,
+      1.35rem
+    );
+
+    line-height: 1.7;
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding-inline: var(--space-5);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button--primary {
+    background: var(--color-accent);
+    color: #06101b;
+  }
+
+  .button--primary:hover {
+    background: var(--color-accent-soft);
+  }
+
+  .button--secondary {
+    border-color: var(--color-border);
+
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+  }
+
+  .button--secondary:hover {
+    border-color: var(--color-accent);
+  }
+
+  .projects {
+    border-top: 1px solid var(--color-border);
+
+    background:
+      linear-gradient(
+        180deg,
+        var(--color-bg) 0%,
+        var(--color-surface) 100%
+      );
+  }
+
+  .about-grid,
+  .contact-grid {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    gap: clamp(
+      var(--space-6),
+      8vw,
+      var(--space-9)
+    );
+  }
+
+  .about-grid h2,
+  .contact-grid h2 {
+    margin-bottom: 0;
+
+    font-size: clamp(
+      2rem,
+      5vw,
+      3.4rem
+    );
+
+    letter-spacing: -0.03em;
+  }
+
+  .about-copy {
+    max-width: 640px;
+  }
+
+  .about-copy p {
+    font-size: 1.05rem;
+  }
+
+  .skills-section {
+    border-block: 1px solid var(--color-border);
+
+    background: var(--color-surface);
+  }
+
+  .skills-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-3);
+  }
+
+  .skill-card {
+    padding: var(--space-5);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: var(--color-bg);
+  }
+
+  .skill-card h3 {
+    margin-bottom: var(--space-5);
+
+    font-size: 1.15rem;
+  }
+
+  .skill-card ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .skill-card li {
+    padding:
+      0.4rem
+      0.65rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .education-list {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .education-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    padding-block: var(--space-5);
+
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .education-item h3 {
+    margin-bottom: var(--space-1);
+
+    font-size: clamp(
+      1.2rem,
+      3vw,
+      1.55rem
+    );
+  }
+
+  .education-item p {
+    margin: 0;
+
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .education-item > span {
+    color: var(--color-accent);
+
+    font-size: 1.5rem;
+  }
+
+  .contact-section {
+    background:
+      linear-gradient(
+        180deg,
+        var(--color-bg),
+        var(--color-surface)
+      );
+  }
+
+  .contact-content {
+    max-width: 640px;
+  }
+
+  .contact-content > p {
+    margin-bottom: var(--space-6);
+
+    font-size: 1.05rem;
+  }
+
+  .contact-links {
+    display: grid;
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-block: var(--space-4);
+
+    border-bottom: 1px solid var(--color-border);
+
+    color: var(--color-text-primary);
+
+    font-weight: 600;
+
+    transition:
+      color var(--transition-fast),
+      padding-left var(--transition-fast);
+  }
+
+  .contact-links a:hover {
+    padding-left: var(--space-2);
+
+    color: var(--color-accent-soft);
+  }
+
+  .contact-links span {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 760px) {
+    .about-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      min-height: auto;
+
+      padding-block:
+        calc(var(--space-8) + 72px)
+        var(--space-7);
+    }
+
+    .hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

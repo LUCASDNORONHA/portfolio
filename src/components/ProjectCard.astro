@@ -1,0 +1,216 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  technologies: string[];
+  href: string;
+  status?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  technologies,
+  href,
+  status = "Projeto em desenvolvimento",
+} = Astro.props;
+---
+
+<article class="project-card">
+  <a
+    class="project-card__image-wrapper"
+    href={href}
+  >
+    <img
+      class="project-card__image"
+      src={image}
+      alt={imageAlt}
+      loading="lazy"
+    />
+  </a>
+
+  <div class="project-card__content">
+    <div class="project-card__meta">
+      <span class="project-card__status">
+        {status}
+      </span>
+    </div>
+
+    <h3>
+      <a href={href}>
+        {title}
+      </a>
+    </h3>
+
+    <p class="project-card__description">
+      {description}
+    </p>
+
+    <ul
+      class="project-card__technologies"
+      aria-label="Tecnologias utilizadas"
+    >
+      {
+        technologies.map((technology) => (
+          <li>{technology}</li>
+        ))
+      }
+    </ul>
+
+    <a
+      class="project-card__link"
+      href={href}
+    >
+      Examinar estudo de caso
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
+
+<style>
+  .project-card {
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--color-surface);
+
+    transition:
+      border-color var(--transition-default),
+      transform var(--transition-default);
+  }
+
+  .project-card:hover {
+    border-color:
+      color-mix(
+        in srgb,
+        var(--color-accent) 55%,
+        var(--color-border)
+      );
+
+    transform: translateY(-4px);
+  }
+
+  .project-card__image-wrapper {
+    display: block;
+    overflow: hidden;
+
+    aspect-ratio: 16 / 9;
+
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface-elevated);
+  }
+
+  .project-card__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform var(--transition-default);
+  }
+
+  .project-card:hover .project-card__image {
+    transform: scale(1.015);
+  }
+
+  .project-card__content {
+    padding: clamp(
+      var(--space-5),
+      4vw,
+      var(--space-6)
+    );
+  }
+
+  .project-card__meta {
+    margin-bottom: var(--space-3);
+  }
+
+  .project-card__status {
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    max-width: 800px;
+
+    margin-bottom: var(--space-4);
+
+    font-size: clamp(
+      1.7rem,
+      3vw,
+      2.35rem
+    );
+  }
+
+  h3 a:hover {
+    color: var(--color-accent-soft);
+  }
+
+  .project-card__description {
+    max-width: 760px;
+
+    margin-bottom: var(--space-5);
+
+    font-size: 1.05rem;
+  }
+
+  .project-card__technologies {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin: 0 0 var(--space-5);
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .project-card__technologies li {
+    padding:
+      0.35rem
+      0.65rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    background: var(--color-surface-elevated);
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .project-card__link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    color: var(--color-text-primary);
+
+    font-weight: 600;
+  }
+
+  .project-card__link span {
+    color: var(--color-accent);
+
+    transition: transform var(--transition-fast);
+  }
+
+  .project-card__link:hover span {
+    transform: translateX(4px);
+  }
+</style>

@@ -1,0 +1,1156 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+
+const base = import.meta.env.BASE_URL;
+
+const technologies = [
+  "Python",
+  "pandas",
+  "NumPy",
+  "GeoPandas",
+  "Matplotlib",
+  "Plotly",
+  "Streamlit",
+  "Power BI",
+  "Power Query",
+  "DAX",
+  "pytest",
+  "Git",
+  "GitHub",
+  "uv",
+];
+---
+
+<BaseLayout
+  title="Panorama da População Indígena Brasileira — Lucas Dias Noronha"
+  description="Estudo de caso sobre as transformações demográficas e espaciais da população indígena brasileira entre os Censos de 2010 e 2022."
+>
+  <Header />
+
+  <main id="conteudo-principal">
+    <section class="project-hero">
+      <div class="container project-hero__content">
+        <a
+          class="project-hero__back"
+          href={`${base}#projetos`}
+        >
+          ← Voltar aos projetos
+        </a>
+
+        <p class="eyebrow">
+          ANÁLISE DE DADOS · IBGE
+        </p>
+
+        <h1>
+          Panorama da População Indígena Brasileira
+        </h1>
+
+        <p class="project-hero__period">
+          Censo Demográfico 2010–2022
+        </p>
+
+        <p class="project-hero__summary">
+          Uma investigação baseada em dados públicos do IBGE
+          sobre como a população indígena brasileira se
+          transformou demográfica e espacialmente ao longo de
+          doze anos.
+        </p>
+
+        <div class="project-hero__actions">
+          <a
+            class="button button--primary"
+            href="https://github.com/LUCASDNORONHA/exploracao-dados-indigenas-2010-2022"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Examinar repositório
+          </a>
+
+          <a
+            class="button button--secondary"
+            href="https://exploracao-dados-indigenas-2010-2022-fxmr2czh5tampra9yggxak.streamlit.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Explorar Streamlit
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-cover">
+      <div class="container">
+        <img
+          src={`${base}images/projects/panorama-indigena.png`}
+          alt="Capa do projeto Panorama da População Indígena Brasileira"
+        />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container content-grid">
+        <aside class="project-meta">
+          <div>
+            <span>Fonte</span>
+            <strong>IBGE</strong>
+          </div>
+
+          <div>
+            <span>Período</span>
+            <strong>2010–2022</strong>
+          </div>
+
+          <div>
+            <span>Escala</span>
+            <strong>Brasil, regiões e UFs</strong>
+          </div>
+
+          <div>
+            <span>Estado</span>
+            <strong>Em evolução</strong>
+          </div>
+        </aside>
+
+        <article class="project-content">
+          <section>
+            <p class="eyebrow">
+              CONTEXTO
+            </p>
+
+            <h2>
+              Compreender uma transformação que não pode ser explicada apenas pelo total nacional.
+            </h2>
+
+            <p>
+              Entre os Censos Demográficos de 2010 e 2022,
+              o contingente de pessoas indígenas registrado no
+              Brasil apresentou uma transformação expressiva.
+              Entretanto, observar apenas o crescimento agregado
+              não é suficiente para compreender como essa mudança
+              ocorreu.
+            </p>
+
+            <p>
+              O projeto investiga essa transformação por diferentes
+              recortes territoriais, considerando situação urbana
+              e rural, presença em Terras Indígenas, Grandes Regiões
+              e Unidades da Federação.
+            </p>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              PERGUNTAS ANALÍTICAS
+            </p>
+
+            <h2>
+              O que procuramos descobrir?
+            </h2>
+
+            <ul class="questions">
+              <li>
+                O crescimento da população indígena entre
+                2010 e 2022 foi significativo?
+              </li>
+
+              <li>
+                Esse crescimento ocorreu de maneira semelhante
+                em áreas urbanas e rurais?
+              </li>
+
+              <li>
+                Como a presença dentro e fora das Terras Indígenas
+                altera a interpretação dos dados?
+              </li>
+
+              <li>
+                Quais regiões e estados concentraram as maiores
+                transformações?
+              </li>
+
+              <li>
+                Que padrões espaciais emergem quando os dados são
+                representados geograficamente?
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              DADOS E PREPARAÇÃO
+            </p>
+
+            <h2>
+              Da publicação estatística à base analítica.
+            </h2>
+
+            <p>
+              Os dados utilizados são provenientes dos Censos
+              Demográficos de 2010 e 2022 publicados pelo Instituto
+              Brasileiro de Geografia e Estatística.
+            </p>
+
+            <p>
+              A preparação envolve organização dos recortes
+              territoriais, tratamento dos valores, padronização
+              das variáveis e geração de tabelas intermediárias
+              destinadas às análises, visualizações e dashboards.
+            </p>
+
+            <div class="method-grid">
+              <div class="method-card">
+                <span>01</span>
+
+                <h3>
+                  Preparação
+                </h3>
+
+                <p>
+                  Limpeza, padronização e estruturação das bases.
+                </p>
+              </div>
+
+              <div class="method-card">
+                <span>02</span>
+
+                <h3>
+                  Análise
+                </h3>
+
+                <p>
+                  Comparações temporais, territoriais e demográficas.
+                </p>
+              </div>
+
+              <div class="method-card">
+                <span>03</span>
+
+                <h3>
+                  Visualização
+                </h3>
+
+                <p>
+                  Gráficos, mapas e storytelling orientados à interpretação.
+                </p>
+              </div>
+
+              <div class="method-card">
+                <span>04</span>
+
+                <h3>
+                  Exploração
+                </h3>
+
+                <p>
+                  Dashboards em Streamlit e Power BI.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              RESULTADOS
+            </p>
+
+            <h2>
+              O crescimento nacional esconde transformações demográficas e territoriais distintas.
+            </h2>
+
+            <div class="finding-block">
+              <div class="finding-block__header">
+                <span class="finding-block__number">
+                  01
+                </span>
+
+                <div>
+                  <h3>
+                    A população indígena registrada cresceu 88,96% em doze anos.
+                  </h3>
+
+                  <p>
+                    O contingente registrado pelos Censos passou de
+                    896.917 pessoas em 2010 para 1.694.836 em 2022,
+                    um acréscimo absoluto de 797.919 pessoas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="metrics">
+                <div class="metric">
+                  <span>2010</span>
+                  <strong>896.917</strong>
+                </div>
+
+                <div class="metric">
+                  <span>2022</span>
+                  <strong>1.694.836</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Crescimento</span>
+                  <strong>+88,96%</strong>
+                </div>
+              </div>
+
+              <figure class="project-figure">
+                <img
+                  src={`${base}images/projects/panorama-indigena/grafico_crescimento_populacao_indigena_brasil.png`}
+                  alt="Comparação da população indígena brasileira entre os Censos de 2010 e 2022"
+                  loading="lazy"
+                />
+
+                <figcaption>
+                  A população indígena registrada pelo Censo passou de
+                  aproximadamente 897 mil para 1,69 milhão de pessoas.
+                  Fonte: IBGE, Censos Demográficos 2010 e 2022.
+                </figcaption>
+              </figure>
+
+              <p class="interpretation">
+                O crescimento agregado estabelece a dimensão da transformação,
+                mas não explica onde ela ocorreu. Para isso, é necessário
+                decompor o resultado segundo situação do domicílio e território.
+              </p>
+            </div>
+
+            <div class="finding-block">
+              <div class="finding-block__header">
+                <span class="finding-block__number">
+                  02
+                </span>
+
+                <div>
+                  <h3>
+                    Quase três quartos do acréscimo líquido ocorreram no componente urbano.
+                  </h3>
+
+                  <p>
+                    A população indígena urbana passou de 324.834 para
+                    914.746 pessoas, crescimento de aproximadamente 181,6%.
+                    O contingente rural também aumentou, porém em ritmo
+                    consideravelmente menor: de 572.083 para 780.090.
+                  </p>
+                </div>
+              </div>
+
+              <div class="metrics">
+                <div class="metric">
+                  <span>Acréscimo urbano</span>
+                  <strong>+589.912</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Acréscimo rural</span>
+                  <strong>+208.007</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Parcela urbana</span>
+                  <strong>73,9%</strong>
+                </div>
+              </div>
+
+              <figure class="project-figure">
+                <img
+                  src={`${base}images/projects/panorama-indigena/grafico_crescimento_pop_indigena_area.png`}
+                  alt="Comparação do crescimento da população indígena urbana e rural entre 2010 e 2022"
+                  loading="lazy"
+                />
+
+                <figcaption>
+                  A expansão do contingente urbano respondeu por aproximadamente
+                  73,9% do acréscimo absoluto observado entre os dois Censos.
+                  Fonte: IBGE.
+                </figcaption>
+              </figure>
+
+              <p class="interpretation">
+                Essa decomposição modifica a leitura inicial do crescimento.
+                Em 2010, 36,2% da população indígena registrada era urbana;
+                em 2022, essa participação chegou a aproximadamente 54,0%.
+              </p>
+            </div>
+
+            <div class="finding-block">
+              <div class="finding-block__header">
+                <span class="finding-block__number">
+                  03
+                </span>
+
+                <div>
+                  <h3>
+                    O crescimento foi profundamente desigual entre as regiões brasileiras.
+                  </h3>
+
+                  <p>
+                    Norte e Nordeste mais que dobraram seus contingentes
+                    indígenas registrados, enquanto Sul e Sudeste apresentaram
+                    variações muito mais moderadas.
+                  </p>
+                </div>
+              </div>
+
+              <div class="metrics metrics--regions">
+                <div class="metric">
+                  <span>Norte</span>
+                  <strong>+119,9%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Nordeste</span>
+                  <strong>+127,3%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Centro-Oeste</span>
+                  <strong>+39,5%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Sudeste</span>
+                  <strong>+24,5%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Sul</span>
+                  <strong>+12,1%</strong>
+                </div>
+              </div>
+
+              <figure class="project-figure">
+                <img
+                  src={`${base}images/projects/panorama-indigena/grafico_crescimento_regional_2010_2022.png`}
+                  alt="Comparação do crescimento da população indígena entre as cinco Grandes Regiões brasileiras"
+                  loading="lazy"
+                />
+
+                <figcaption>
+                  As cinco Grandes Regiões seguiram trajetórias distintas
+                  entre 2010 e 2022. Fonte: IBGE.
+                </figcaption>
+              </figure>
+
+              <p class="interpretation">
+                A magnitude nacional, portanto, não representa uma trajetória
+                uniforme. O resultado agregado é produzido por movimentos
+                regionais substancialmente diferentes.
+              </p>
+            </div>
+
+            <div class="finding-block">
+              <div class="finding-block__header">
+                <span class="finding-block__number">
+                  04
+                </span>
+
+                <div>
+                  <h3>
+                    A análise espacial revela padrões que os totais nacionais não mostram.
+                  </h3>
+
+                  <p>
+                    Ao deslocar a análise para as Unidades da Federação,
+                    torna-se possível observar onde o crescimento relativo
+                    foi mais intenso e distinguir concentração populacional
+                    de velocidade de transformação.
+                  </p>
+                </div>
+              </div>
+
+              <figure class="project-figure">
+                <img
+                  src={`${base}images/projects/panorama-indigena/mapa_crescimento_percentual_2010_2022.png`}
+                  alt="Mapa do crescimento percentual da população indígena por Unidade da Federação entre 2010 e 2022"
+                  loading="lazy"
+                />
+
+                <figcaption>
+                  Crescimento percentual da população indígena por Unidade
+                  da Federação entre os Censos de 2010 e 2022. Fonte: IBGE.
+                </figcaption>
+              </figure>
+
+              <p class="interpretation">
+                A cartografia complementa rankings e indicadores ao mostrar
+                a distribuição territorial dos fenômenos, tornando a dimensão
+                geográfica parte da própria análise e não apenas um recurso
+                ilustrativo.
+              </p>
+            </div>
+
+            <div class="finding-block">
+              <div class="finding-block__header">
+                <span class="finding-block__number">
+                  05
+                </span>
+
+                <div>
+                  <h3>
+                    A maior parcela do crescimento ocorreu fora de Terras Indígenas.
+                  </h3>
+
+                  <p>
+                    A população residente em Terras Indígenas passou de
+                    517.383 para 622.844 pessoas. Fora delas, o contingente
+                    aumentou de 379.534 para 1.071.992.
+                  </p>
+                </div>
+              </div>
+
+              <div class="metrics">
+                <div class="metric">
+                  <span>Em TI</span>
+                  <strong>+20,4%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Fora de TI</span>
+                  <strong>+182,4%</strong>
+                </div>
+
+                <div class="metric">
+                  <span>Acréscimo fora de TI</span>
+                  <strong>692.458</strong>
+                </div>
+              </div>
+
+              <p class="interpretation">
+                Cerca de 86,8% do acréscimo absoluto registrado entre os
+                dois Censos corresponde ao contingente situado fora de
+                Terras Indígenas. Essa dimensão territorial é fundamental
+                para interpretar a transformação observada.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              EXPLORAÇÃO INTERATIVA
+            </p>
+
+            <h2>
+              Dois produtos complementares.
+            </h2>
+
+            <div class="dashboard-grid">
+              <a
+                class="dashboard-card"
+                href="https://exploracao-dados-indigenas-2010-2022-fxmr2czh5tampra9yggxak.streamlit.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>PYTHON</span>
+
+                <h3>
+                  Streamlit
+                </h3>
+
+                <p>
+                  Aplicação exploratória desenvolvida em Python,
+                  Streamlit e Plotly.
+                </p>
+
+                <strong>
+                  Abrir dashboard →
+                </strong>
+              </a>
+
+              <a
+                class="dashboard-card"
+                href="https://app.powerbi.com/view?r=eyJrIjoiZjA4MmQ0MDgtMGYyNC00ZTFmLThhN2MtYzgzMWI1NWM5YjJmIiwidCI6Ijk5ZjUxNTc1LWQ2ODEtNDMyYS1iZDNmLTZhNjhjMDVmMGJhNiJ9&embedImagePlaceholder=true"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>BUSINESS INTELLIGENCE</span>
+
+                <h3>
+                  Power BI
+                </h3>
+
+                <p>
+                  Relatório analítico voltado à síntese visual
+                  e exploração dos principais indicadores.
+                </p>
+
+                <strong>
+                  Abrir relatório →
+                </strong>
+              </a>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              TECNOLOGIAS
+            </p>
+
+            <h2>
+              Ferramentas utilizadas no projeto.
+            </h2>
+
+            <ul class="technology-list">
+              {
+                technologies.map((technology) => (
+                  <li>{technology}</li>
+                ))
+              }
+            </ul>
+          </section>
+
+          <section>
+            <p class="eyebrow">
+              LIMITAÇÕES E EVOLUÇÃO
+            </p>
+
+            <h2>
+              O projeto permanece aberto a novas camadas analíticas.
+            </h2>
+
+            <p>
+              A versão atual concentra-se na exploração demográfica
+              e espacial dos dados disponíveis nos Censos de 2010 e
+              2022. As análises devem ser interpretadas dentro desse
+              recorte e não constituem, isoladamente, explicações
+              causais para as transformações observadas.
+            </p>
+
+            <p>
+              As próximas etapas incluem aprofundamento estatístico
+              e integração com outras bases públicas relacionadas
+              a desenvolvimento socioeconômico, território e meio
+              ambiente.
+            </p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .project-hero {
+    padding-block:
+      calc(var(--space-9) + 72px)
+      var(--space-8);
+  }
+
+  .project-hero__content {
+    max-width: 1000px;
+  }
+
+  .project-hero__back {
+    display: inline-block;
+
+    margin-bottom: var(--space-7);
+
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .project-hero__back:hover {
+    color: var(--color-text-primary);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-3);
+
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+  }
+
+  h1 {
+    max-width: 1000px;
+
+    margin-bottom: var(--space-3);
+
+    font-size: clamp(
+      3rem,
+      7vw,
+      6rem
+    );
+
+    font-weight: 650;
+    letter-spacing: -0.045em;
+  }
+
+  .project-hero__period {
+    margin-bottom: var(--space-5);
+
+    color: var(--color-accent-soft);
+
+    font-family: var(--font-mono);
+    font-size: 1rem;
+  }
+
+  .project-hero__summary {
+    max-width: 760px;
+
+    margin-bottom: var(--space-6);
+
+    font-size: clamp(
+      1.15rem,
+      2vw,
+      1.4rem
+    );
+
+    line-height: 1.7;
+  }
+
+  .project-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-3);
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+    padding-inline: var(--space-5);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button--primary {
+    background: var(--color-accent);
+    color: #06101b;
+  }
+
+  .button--primary:hover {
+    background: var(--color-accent-soft);
+  }
+
+  .button--secondary {
+    border-color: var(--color-border);
+
+    background: var(--color-surface);
+  }
+
+  .button--secondary:hover {
+    border-color: var(--color-accent);
+  }
+
+  .project-cover {
+    padding-bottom: var(--space-8);
+  }
+
+  .project-cover img {
+    width: 100%;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+  }
+
+  .content-grid {
+    display: grid;
+
+    grid-template-columns:
+      minmax(170px, 240px)
+      minmax(0, 760px);
+
+    gap: clamp(
+      var(--space-6),
+      8vw,
+      var(--space-9)
+    );
+
+    align-items: start;
+  }
+
+  .project-meta {
+    position: sticky;
+    top: 110px;
+
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .project-meta div {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .project-meta span {
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .project-meta strong {
+    font-size: 0.92rem;
+    font-weight: 550;
+  }
+
+  .project-content {
+    display: grid;
+
+    gap: var(--space-9);
+  }
+
+  .project-content section {
+    scroll-margin-top: 110px;
+  }
+
+  .project-content h2 {
+    margin-bottom: var(--space-5);
+
+    font-size: clamp(
+      2rem,
+      5vw,
+      3.2rem
+    );
+
+    letter-spacing: -0.03em;
+  }
+
+  .project-content p {
+    font-size: 1.05rem;
+  }
+
+  .questions {
+    display: grid;
+    gap: var(--space-3);
+
+    margin: 0;
+    padding-left: 1.3rem;
+
+    color: var(--color-text-secondary);
+  }
+
+  .questions li {
+    padding-left: var(--space-2);
+  }
+
+  .method-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-3);
+
+    margin-top: var(--space-6);
+  }
+
+  .method-card {
+    padding: var(--space-5);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: var(--color-surface);
+  }
+
+  .method-card span {
+    display: block;
+
+    margin-bottom: var(--space-5);
+
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .method-card h3 {
+    margin-bottom: var(--space-2);
+  }
+
+  .method-card p {
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .finding-block {
+    padding-block: var(--space-7);
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .finding-block:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .finding-block__header {
+    display: grid;
+
+    grid-template-columns:
+      48px
+      minmax(0, 1fr);
+
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-6);
+  }
+
+  .finding-block__number {
+    padding-top: 0.25rem;
+
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+
+  .finding-block h3 {
+    max-width: 680px;
+
+    margin-bottom: var(--space-3);
+
+    font-size: clamp(
+      1.5rem,
+      3vw,
+      2rem
+    );
+
+    line-height: 1.25;
+  }
+
+  .finding-block__header p {
+    max-width: 680px;
+    margin-bottom: 0;
+  }
+
+  .metrics {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-6);
+  }
+
+  .metrics--regions {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .metric {
+    display: grid;
+    gap: var(--space-2);
+
+    padding: var(--space-4);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: var(--color-surface);
+  }
+
+  .metric span {
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .metric strong {
+    color: var(--color-text-primary);
+
+    font-size: clamp(
+      1.15rem,
+      3vw,
+      1.55rem
+    );
+
+    font-weight: 600;
+  }
+
+  .project-figure {
+    margin:
+      var(--space-6)
+      0
+      var(--space-5);
+  }
+
+  .project-figure img {
+    width: 100%;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: var(--color-surface);
+  }
+
+  .project-figure figcaption {
+    margin-top: var(--space-3);
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .interpretation {
+    padding-left: var(--space-4);
+
+    border-left: 2px solid var(--color-accent);
+
+    color: var(--color-text-primary) !important;
+
+    font-size: 1rem !important;
+  }
+
+  .dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-3);
+  }
+
+  .dashboard-card {
+    padding: var(--space-5);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    background: var(--color-surface);
+
+    transition:
+      border-color var(--transition-default),
+      transform var(--transition-default);
+  }
+
+  .dashboard-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+
+  .dashboard-card span {
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  .dashboard-card h3 {
+    margin-block:
+      var(--space-4)
+      var(--space-3);
+
+    font-size: 1.6rem;
+  }
+
+  .dashboard-card strong {
+    font-size: 0.9rem;
+  }
+
+  .technology-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .technology-list li {
+    padding:
+      0.5rem
+      0.75rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    background: var(--color-surface);
+
+    color: var(--color-text-secondary);
+
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+  }
+
+  @media (max-width: 820px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-meta {
+      position: static;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      padding-bottom: var(--space-6);
+
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .metrics--regions {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .project-hero {
+      padding-block:
+        calc(var(--space-8) + 72px)
+        var(--space-7);
+    }
+
+    .project-hero__actions {
+      flex-direction: column;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .method-grid,
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-meta {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .finding-block__header {
+      grid-template-columns: 1fr;
+    }
+
+    .metrics,
+    .metrics--regions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

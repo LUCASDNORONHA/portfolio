@@ -1,0 +1,75 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p>
+      © {new Date().getFullYear()} Lucas Dias Noronha
+    </p>
+
+    <nav aria-label="Links do rodapé">
+      <a
+        href="https://github.com/LUCASDNORONHA"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/lucasdiasnoronha/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    min-height: 96px;
+  }
+
+  .site-footer p {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 0.85rem;
+  }
+
+  .site-footer nav {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .site-footer a {
+    color: var(--color-text-secondary);
+
+    font-size: 0.85rem;
+
+    transition: color var(--transition-fast);
+  }
+
+  .site-footer a:hover {
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 560px) {
+    .site-footer__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+</style>
