@@ -6,6 +6,3 @@ O site reúne estudos de caso desenvolvidos com foco na investigação de proble
 
 **Acesse o portfólio:**  
 https://lucasdnoronha.github.io/portfolio/
-
-/github.com/LUCASDNORONHA
-- Portfólio: https://lucasdnoronha.github.io/portfolio/
